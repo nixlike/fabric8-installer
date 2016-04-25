@@ -25,6 +25,8 @@ if [ ${VM_MEMORY} -lt 8192 ]; then
 fi
 echo "=========================================================================="
 
+yum upgrade -y
+
 # download gofabric8
 mkdir /tmp/gofabric8
 
@@ -236,6 +238,7 @@ EOT
 
 # now lets create the registry
 oc adm registry --create --credentials=/var/lib/openshift/openshift.local.config/master/openshift-registry.kubeconfig --service-account=registry
+
 
 SCRIPT
 
